@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/me/',
   title: "黄兆虎: hi everyone!",
   description: "Just playing around.",
   themeConfig: {
