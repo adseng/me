@@ -20,6 +20,10 @@ module.exports = {
         text: "AI & 人工智能",
         items: [{ text: "AI", link: "/ai/" }],
       },
+      {
+        text: "linux",
+        items: [{ text: "shell", link: "/linux/shell/" }],
+      },
     ],
   },
 };

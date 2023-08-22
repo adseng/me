@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 
 git add .
-git commit -m "-"
+git commit -m "linux"
 git push
