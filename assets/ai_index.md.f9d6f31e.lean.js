@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,X as l}from"./chunks/framework.5806856a.js";const C=JSON.parse('{"title":"ai & 人工智能","description":"","frontmatter":{},"headers":[],"relativePath":"ai/index.md","filePath":"ai/index.md"}'),o={name:"ai/index.md"},p=l("",8),e=[p];function t(r,c,F,D,y,i){return a(),n("div",null,e)}const d=s(o,[["render",t]]);export{C as __pageData,d as default};
