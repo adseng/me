@@ -23,5 +23,6 @@ box-shadow: 30px 30px 60px 0 #A6ABBD, -30px -30px 60px 0px #FAFBFF;
 
 background: rgba(255, 255, 255, 0.375);  
 box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(20px);
 
 ```
