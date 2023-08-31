@@ -61,3 +61,107 @@
 这样，你就可以通过执行这个脚本文件来自动执行一系列的 Git 命令。
 
 请注意，无论你是在 macOS 还是 Windows 上创建脚本文件，确保 Git 已经正确安装并配置了相关的环境变量。
+
+## git 常用命令
+
+```bash
+
+git fetch origin    # fetch all origin
+git fetch origin release:release      # 对应 update selected
+git fetch -u origin develop:develop   # --update-head-ok
+
+
+git clean -nxdf（查看要删除的文件及目录，确认无误后再使用下面的命令进行删除）
+git checkout . && git clean -xdf
+
+git checkout -b release-20230114 origin/release-20230114 --  # 切分支
+
+git branch -d feat-xxxx-hzh    # 删除
+git push origin :feat-xxxx-hzh    # 删除远程
+
+# 创建仓库后
+echo "# wwwwww" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:adseng/wwwwww.git
+git push -u origin main
+
+
+
+```
+
+## 清空本地修改
+
+```bash
+
+git checkout . #本地所有修改的。没有的提交的，都返回到原来的状态
+git stash #把所有没有提交的修改暂存到stash里面。可用git stash pop恢复。
+
+git reset --hard HASH #返回到某个节点，不保留修改，已有的改动会丢失。
+git reset --soft HASH #返回到某个节点, 保留修改，已有的改动会保留，在未提交中，git status或git diff可看。
+
+git clean -df #返回到某个节点，（只能删除未跟踪的文件）
+git clean 参数
+    -n 不实际删除，只是进行演练，展示将要进行的操作，有哪些文件将要被删除。（可先使用该命令参数，然后再决定是否执行）
+    -f 删除文件
+    -i 显示将要删除的文件
+    -d 递归删除目录及文件（未跟踪的）
+    -q 仅显示错误，成功删除的文件不显示
+
+
+```
+
+注：
+git reset 删除的是*已跟踪的*文件，将已commit的回退。
+git clean 删除的是未跟踪的文件
+
+git clean -nxdf（查看要删除的文件及目录，确认无误后再使用下面的命令进行删除）
+git checkout . && git clean -xdf
+
+## 生成密钥
+
+```bash
+
+ssh-keygen -t rsa -C "huangzho@digitalchina.com"
+ssh-keygen -t rsa -C "zhaohu.huang@cloudpense.com" -f C:/Users/19839/.ssh/id2_rsa
+
+```
+
+## 一个域名 配置多个密钥
+
+```bash
+
+Host 52.80.205.157
+     HostName 52.80.205.157
+     User     ubuntu
+     IdentityFile        C:\Users\19839\.ssh\apiserverkey
+
+Host 52.81.147.183
+     HostName qa.clccccc.com
+     User     ubuntu
+     IdentityFile        C:\Users\19839\.ssh\apiserverkey
+
+Host www.cloudpense.com
+     HostName www.clccccc.com
+     User     ubuntu
+     IdentityFile        C:\Users\19839\.ssh\apiserverkey
+
+Host github.com
+     HostName github.com
+     User onecaster
+     IdentityFile C:\Users\19839\.ssh\id2_rsa
+
+Host github.com
+     HostName github.com
+     User adseng
+     IdentityFile C:\Users\19839\.ssh\id_rsa
+
+```
+
+## cherry pick
+
+## create patch
+
+
